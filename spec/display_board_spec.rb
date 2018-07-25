@@ -145,7 +145,7 @@ describe "#display_board in 'lib/display_board.rb" do
 
       # Define the board with values that should create the desired output
       # *** Edit the line below ***
-      board = ["X", "X", " ", " ", " ", " ", " ", " ", " "] # This is not correct
+      board = ["X", "X", "X", "X", "X", "X", "X", "X", "X"] # This is not correct
 
       # Don't touch the following lines.
       output = capture_puts{ display_board(board) } if defined?(display_board)
@@ -155,6 +155,13 @@ describe "#display_board in 'lib/display_board.rb" do
       # The desired characters a row must include are provided by the String
       # of the row. EX: The top row filled with X would be " X | X | X "
 
+      expect(rows[0]).to eq(" X | X | X ")
+      expect(rows[1]).to eq("-----------")
+      expect(rows[2]).to eq(" X | X | X ")
+      expect(rows[3]).to eq("-----------")
+      expect(rows[4]).to eq("   |   |   ")
+
+    end
       # You would code that expectation with:
       # expect(output).to include(" X | X | X ")
       # meaning you expect the entire output to at least include a matching row.
